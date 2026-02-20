@@ -84,3 +84,21 @@ console.log(strr("jahid"));
     }
 
     console.log( tolowercase ( "jahid hasan   "))
+
+
+    //  duplicate character in string  mane kono word ak ba akadik bar letter use hole remeve kore dei 
+
+     const duplicate = ( str ) =>{
+         let charCuont = "";
+           for ( let char of str ){
+              if ( !charCuont.includes(char)){
+                 charCuont+=char
+              }
+              else{
+                 
+              }
+           }
+           return charCuont;
+      }
+
+      console.log( duplicate("programming"))

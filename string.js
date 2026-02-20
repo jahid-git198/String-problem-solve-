@@ -102,3 +102,23 @@ console.log(strr("jahid"));
       }
 
       console.log( duplicate("programming"))
+
+      //   check anagram    এটার  মানে হলো দুাইটা শব্দের আক্ষর গুলে্া েএক রকম কি না 
+
+
+       const anagrma =   ( str1,str2) => {
+
+        if ( str1.length !== str2.length){
+           return false ;
+        }
+
+         let sorted1 = str1.toLowerCase().split("").sort().join("");
+         let sorted2 = str2.toLowerCase().split("").sort().join("");
+
+           return sorted1 === sorted2 ;
+           
+       }
+
+         console.log( anagrma ( " jahid ", "hasan")) // false 
+
+         console.log( anagrma ( "listen", "silent")) //true 

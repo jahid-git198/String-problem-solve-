@@ -58,3 +58,29 @@ console.log(strr("jahid"));
              return { vowel, consonant }
     }
     console.log(countVowels("how are you "))
+
+    //  uppper case to lower case 
+
+    const tolowercase = (str) => {
+        let vowel = 0;
+        let consonant = 0;
+        str = str.toLowerCase();
+
+        for ( let char of str ){
+            if ( char >= 'a ' && char <= 'z'){
+               vowel++;
+            }
+             else{
+               consonant++;
+            }
+        }
+         return {
+            vowel ,
+            consonant
+         }
+        
+
+
+    }
+
+    console.log( tolowercase ( "jahid hasan   "))

@@ -122,3 +122,24 @@ console.log(strr("jahid"));
          console.log( anagrma ( " jahid ", "hasan")) // false 
 
          console.log( anagrma ( "listen", "silent")) //true 
+
+
+         // count freequency of chracter in a string ,, mane holo akta string koibar kore ase ta bole deow 
+
+         function countFrequency(arr) {
+  let frequency = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    let element = arr[i];
+
+    if (frequency[element]) {
+      frequency[element] = frequency[element] + 1;
+    } else {
+      frequency[element] = 1;
+    }
+  }
+
+  return frequency;
+}
+
+console.log(countFrequency([1, 2, 2, 3, 1, 4, 2]));

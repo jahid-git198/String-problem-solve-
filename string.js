@@ -13,120 +13,103 @@ const strr = (jahid) => {
   }
 
   return result;
-
-
 };
 
-
- strr("jahid")
+strr("jahid");
 
 console.log(strr("jahid"));
 
+//  next way to reverse a string without using built in function
 
-//  next way to reverse a string without using built in function 
+const string = (hasan) => {
+  let all = "";
 
- const string = (hasan ) => {
-      let all = "";
+  for (let char of hasan) {
+    all = char + all;
+  }
 
-       for ( let char of hasan ){
-          all = char + all;
-       }
+  return all;
+};
 
-        return all;
- }
+console.log(string("hasan"));
 
-    console.log(string("hasan"));
+//  count vowels and consonants is a stting
 
+const countVowels = (srt) => {
+  let vowel = 0;
+  let consonant = 0;
+  const vowels = "aeiouAEIOU";
 
-    //  count vowels and consonants is a stting 
-
-    const countVowels = (srt) =>{
-            let vowel  = 0;
-            let consonant = 0 ;
-             const vowels = "aeiouAEIOU";
-
-             for ( let char of srt ){
-                if ( /[a-zA-Z]/.test(char)){
-                   if ( vowels.includes(char)){
-                     vowel++;
-                   }
-                }
-                else  {
-                   consonant++; 
-                }
-             }
-             return { vowel, consonant }
-    }
-    console.log(countVowels("how are you "))
-
-    //  uppper case to lower case 
-
-    const tolowercase = (str) => {
-        let vowel = 0;
-        let consonant = 0;
-        str = str.toLowerCase();
-
-        for ( let char of str ){
-            if ( char >= 'a ' && char <= 'z'){
-               vowel++;
-            }
-             else{
-               consonant++;
-            }
-        }
-         return {
-            vowel ,
-            consonant
-         }
-        
-
-
-    }
-
-    console.log( tolowercase ( "jahid hasan   "))
-
-
-    //  duplicate character in string  mane kono word ak ba akadik bar letter use hole remeve kore dei 
-
-     const duplicate = ( str ) =>{
-         let charCuont = "";
-           for ( let char of str ){
-              if ( !charCuont.includes(char)){
-                 charCuont+=char
-              }
-              else{
-                 
-              }
-           }
-           return charCuont;
+  for (let char of srt) {
+    if (/[a-zA-Z]/.test(char)) {
+      if (vowels.includes(char)) {
+        vowel++;
       }
+    } else {
+      consonant++;
+    }
+  }
+  return { vowel, consonant };
+};
+console.log(countVowels("how are you "));
 
-      console.log( duplicate("programming"))
+//  uppper case to lower case
 
-      //   check anagram    এটার  মানে হলো দুাইটা শব্দের আক্ষর গুলে্া েএক রকম কি না 
+const tolowercase = (str) => {
+  let vowel = 0;
+  let consonant = 0;
+  str = str.toLowerCase();
 
+  for (let char of str) {
+    if (char >= "a " && char <= "z") {
+      vowel++;
+    } else {
+      consonant++;
+    }
+  }
+  return {
+    vowel,
+    consonant,
+  };
+};
 
-       const anagrma =   ( str1,str2) => {
+console.log(tolowercase("jahid hasan   "));
 
-        if ( str1.length !== str2.length){
-           return false ;
-        }
+//  duplicate character in string  mane kono word ak ba akadik bar letter use hole remeve kore dei
 
-         let sorted1 = str1.toLowerCase().split("").sort().join("");
-         let sorted2 = str2.toLowerCase().split("").sort().join("");
+const duplicate = (str) => {
+  let charCuont = "";
+  for (let char of str) {
+    if (!charCuont.includes(char)) {
+      charCuont += char;
+    } else {
+    }
+  }
+  return charCuont;
+};
 
-           return sorted1 === sorted2 ;
-           
-       }
+console.log(duplicate("programming"));
 
-         console.log( anagrma ( " jahid ", "hasan")) // false 
+//   check anagram    এটার  মানে হলো দুাইটা শব্দের আক্ষর গুলে্া েএক রকম কি না
 
-         console.log( anagrma ( "listen", "silent")) //true 
+const anagrma = (str1, str2) => {
+  if (str1.length !== str2.length) {
+    return false;
+  }
 
+  let sorted1 = str1.toLowerCase().split("").sort().join("");
+  let sorted2 = str2.toLowerCase().split("").sort().join("");
 
-         // count freequency of chracter in a string ,, mane holo akta string koibar kore ase ta bole deow 
+  return sorted1 === sorted2;
+};
 
-         function countFrequency(arr) {
+console.log(anagrma(" jahid ", "hasan")); // false
+
+console.log(anagrma("listen", "silent")); //true
+
+// count freequency of chracter in a string ,, mane holo akta string koibar kore ase ta bole deow
+
+function countFrequency(arr) {
   let frequency = {};
 
   for (let i = 0; i < arr.length; i++) {
@@ -143,3 +126,27 @@ console.log(strr("jahid"));
 }
 
 console.log(countFrequency([1, 2, 2, 3, 1, 4, 2]));
+
+// again count frequecncy of character in a string
+
+const countfrequency = (str) => {
+  let frequency = {};
+  for (let i = 0; i < str.length; i++) {
+    let element = str[i];
+
+      if ( frequency[element]){
+          frequency[element] = frequency[element] + 1;
+
+      }
+      else{
+          frequency[element] = 1;
+      }
+  }
+  return frequency;
+};
+
+
+console.log(countFrequency( [1,1,1,3,3,3,4,5,6,6,6,66,]))
+
+
+
